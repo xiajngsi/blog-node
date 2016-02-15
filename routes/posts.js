@@ -95,7 +95,6 @@ function findAllBlog(res,id) {
     Blog.find(function (err, blogs) {
         if (err) return console.error(err);
         res.render('posts', { blogs: blogs });
-        console.log(blogs);
     })
 }
 
