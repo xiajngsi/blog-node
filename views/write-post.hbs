@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>写博客</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+<div class="edit">
+    <h1>文章标题</h1>
+    <input type="text" class="title" value="{{blog.title}}"/><input type="hidden" id="postId" value="{{blog._id}}"/>
+    <h1>文章内容</h1>
+
+    <textarea name="" id="" cols="30" rows="10" class="content">{{blog.content}}</textarea>
+    <button class="submit">保存</button>
+</div>
+<div class="result" style="display: none">
+
+</div>
+</body>
+</html>
+
+<script>
+    $(".submit").on('click', function(){
+        var title = $(".title").val();
+        var content = $('.content').val();
+        console.log('title' + title);
+        console.log('content' + content);
+       if( $('#postId').val() == '' ) {
+           $.post('/posts', {title:title, content:content}, function(data) {
+//               $('.edit').toggle();
+               $('.result').html(data.message);
+               $('.result').toggle();
+           });
+       }else {
+           $.ajax({
+               type:"put", data:{title:title, content:content}, url:'/posts/'+ $('#postId').val(),success: function(data){
+                   $('.result').html(data.message);
+                   $('.result').toggle();
+               }
+           });
+       }
+
+    });
+</script>

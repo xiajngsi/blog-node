@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详细</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>文章详细 <a href="/write-posts">文章列表</a></h1>
+
+    {{# if blog.title}}
+        <h3>{{ blog.title}}</h3>
+    {{/if}}
+    <article>
+        {{{blog.html}}}
+    </article>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+    <h1>文章列表 <a href="/posts/write-blog">写博客</a></h1>
+    {{#each blogs}}
+        {{# if title}}
+            <h3><a href="/posts/{{_id}}">{{title}}</a> <a href="posts/{{_id}}/edit">编辑</a> <span data-id="{{_id}}" class="delete-btn">删除</span></h3>
+        {{/if}}
+    {{/each}}
+
+</body>
+</html>
+
+<script>
+    $(".delete-btn").on("click", function() {
+        var id = $(this).data('id');
+        $.ajax({
+            type:"DELETE", data:{"var":"val"}, url:'/posts/'+ id,success: function(data){
+                alert(data.code);
+            }
+        });
+    });
+
+</script>
