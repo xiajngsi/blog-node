@@ -1,7 +1,10 @@
 
-1. get /posts 文章列表
-2. get /post/:id 查看某篇文章
-3. get /post/:id/edit 进入某篇文章编辑页面
-4. post /post 新建文章
-5. put /post/:id 修改某篇文章
-6. delete /post/:id 删除文章
+1. get /posts 鏂囩珷鍒楄〃
+2. get /post/:id 鏌ョ湅鏌愮瘒鏂囩珷
+3. get /post/:id/edit 杩涘叆鏌愮瘒鏂囩珷缂栬緫椤甸潰
+4. post /post 鏂板缓鏂囩珷
+5. put /post/:id 淇敼鏌愮瘒鏂囩珷
+6. delete /post/:id 鍒犻櫎鏂囩珷
+娴嬭瘯
+1. 娴嬭瘯
+2. 娴嬭瘯
