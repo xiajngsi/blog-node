@@ -6,7 +6,3 @@
 5. put /post/:id 修改某篇文章
 6. delete /post/:id 删除文章
 
-
-测试
-1. 测试
-2. 测试
